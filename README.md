@@ -32,21 +32,22 @@ You package.json should look like this
 
 ```jsonc
 {
-  "name": "YOUR_PROJECT_NAME",
-  "version": "1.0.0",
-  "main": "src/main.ts",
   // Load eslint config
   "eslintConfig": {
     "extends": "./node_modules/@hstech/node-ts-dev/.eslintrc"
   },
+
   // load prettier config
   "prettier": "./node_modules/@hstech/node-ts-dev/.prettierrc.json",
+
+  // Use nodemon
   "scripts": {
-    // Use the nodemon
     "serve": "nodemon --config ./node_modules/@hstech/node-ts-dev/nodemon"
   },
+
+  // @hstech/node-ts-dev MUST BE installed as a dev dependency
   "devDependencies": {
-    "@hstech/node-ts-dev": "~1.0.0"
+    "@hstech/node-ts-dev": "^1.0.0"
   }
 }
 ```
@@ -56,7 +57,10 @@ You package.json should look like this
 ```jsonc
 //
 {
-  "extends": "@hstech/node-ts-dev"
+  "extends": "@hstech/node-ts-dev",
+  "compilerOptions": {
+    "baseUrl": "./"
+  }
 }
 ```
 
@@ -67,7 +71,7 @@ You package.json should look like this
 If you are using **pnpm** don't forget to create a `.npmrc` file with the following configuration
 
 ```
-public-hoist-pattern[]=eslint
+public-hoist-pattern[]=*eslint*
 public-hoist-pattern[]=jest
 public-hoist-pattern[]=ts-node
 public-hoist-pattern[]=nodemon
