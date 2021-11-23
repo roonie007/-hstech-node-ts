@@ -16,7 +16,5 @@
     "noImplicitAny": true,
     "noImplicitThis": true,
     "strictNullChecks": true
-  },
-  "include": ["src/**/*", "__tests__/**/*"],
-  "exclude": ["node_modules"]
+  }
 }

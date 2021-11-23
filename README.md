@@ -52,15 +52,15 @@ You package.json should look like this
 }
 ```
 
-### tsconfig.ts
+### tsconfig.json
+
+Create a `tsconfig.json` file in your project root and it should have at least this configuration
 
 ```jsonc
-//
 {
   "extends": "@hstech/node-ts-dev",
-  "compilerOptions": {
-    "baseUrl": "./"
-  }
+  "include": ["src/**/*", "__tests__/**/*"],
+  "exclude": ["node_modules"]
 }
 ```
 
@@ -71,7 +71,9 @@ You package.json should look like this
 If you are using **pnpm** don't forget to create a `.npmrc` file with the following configuration
 
 ```
-public-hoist-pattern[]=*eslint*
+public-hoist-pattern[]=eslint
+public-hoist-pattern[]=eslint-plugin*
+public-hoist-pattern[]=@typescript-eslint*
 public-hoist-pattern[]=jest
 public-hoist-pattern[]=ts-node
 public-hoist-pattern[]=nodemon
