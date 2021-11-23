@@ -6,6 +6,22 @@
     "node": ">= 16.13"
   },
   "author": "Mouadh HSOUMI <roonie007@users.noreply.github.com>",
+  "bugs": {
+    "url": "https://github.com/roonie007/node-ts-dev/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/roonie007/node-ts-dev.git"
+  },
+  "keywords": [
+    "node",
+    "typescript",
+    "ts",
+    "dev",
+    "eslint",
+    "prettier",
+    "nodemon"
+  ],
   "license": "MIT",
   "dependencies": {
     "@types/jest": "~27.0.2",
