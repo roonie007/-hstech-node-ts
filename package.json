@@ -1,6 +1,6 @@
 {
   "name": "@hstech/node-ts-dev",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Holds all needed development dependencies files and packages for a Typescript/NodeJS based project.",
   "engines": {
     "node": ">= 16.13"
