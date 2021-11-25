@@ -77,6 +77,8 @@ public-hoist-pattern[]=@typescript-eslint*
 public-hoist-pattern[]=jest
 public-hoist-pattern[]=ts-node
 public-hoist-pattern[]=nodemon
+public-hoist-pattern[]=@types/*
+public-hoist-pattern[]=tslib
 ```
 
 Otherwise your runtime won't see the needed executables to work properly [See More](https://pnpm.io/npmrc#public-hoist-pattern)
