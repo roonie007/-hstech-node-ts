@@ -42,7 +42,7 @@ You package.json should look like this
 
   // Use nodemon
   "scripts": {
-    "serve": "nodemon --config ./node_modules/@hstech/node-ts-dev/nodemon"
+    "serve": "nodemon --config ./node_modules/@hstech/node-ts-dev/nodemon.json"
   },
 
   // @hstech/node-ts-dev MUST BE installed as a dev dependency
