@@ -1,9 +1,0 @@
-{
-  "testEnvironment": "node",
-  "moduleFileExtensions": ["ts", "js", "json", "node"],
-  "testRegex": "(\\.|/)(test|spec)\\.(ts)?$",
-  "coverageDirectory": "coverage",
-  "resetMocks": true,
-  "resetModules": true,
-  "collectCoverageFrom": ["src/**/*.{ts,tsx,js,jsx}", "!src/**/*.d.ts"]
-}

@@ -10,13 +10,44 @@
     "project": "tsconfig.json",
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "jest"],
+  "plugins": ["@typescript-eslint", "import", "simple-import-sort", "prettier", "unused-imports", "jest"],
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:jest/recommended",
-    "prettier"
+
+    "plugin:import/recommended",
+    "plugin:jest/recommended"
   ],
-  "rules": {}
+  "settings": {
+    "import/resolver": {
+      "typescript": {} // this loads <rootdir>/tsconfig.json to eslint
+    }
+  },
+  "rules": {
+    "no-console": "warn",
+    "@typescript-eslint/consistent-type-imports": "error",
+
+    "simple-import-sort/imports": [
+      "error",
+      {
+        // The default grouping, but with type imports last as a separate
+        // group, sorting that group like non-type imports are grouped.
+        "groups": [
+          ["^\\u0000"],
+          ["^node:"],
+          ["^@?\\w", "^@/", "^@config", "^@controllers", "^@helpers", "^@models", "@seeders"],
+          ["^"],
+          ["^\\."],
+
+          // Parent imports. Put `..` last.
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          // Other relative imports. Put same-folder imports and `.` last.
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+
+          ["^types", "^@/types", "^node:.*\\u0000$", "^@?\\w.*\\u0000$", "^[^.].*\\u0000$", "^\\..*\\u0000$"]
+        ]
+      }
+    ],
+    "simple-import-sort/exports": "error"
+  }
 }

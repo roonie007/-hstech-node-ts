@@ -17,6 +17,12 @@
     "noImplicitThis": true,
     "strictNullChecks": true,
     "resolveJsonModule": true,
-    "esModuleInterop": true
-  }
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist", "build", "coverage", "src/**/*.test.ts", "src/**/*.spec.ts"],
+  "include": ["src/**/*"]
 }
